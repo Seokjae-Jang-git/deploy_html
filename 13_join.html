@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #container {
+      width: 600px;
+      height: 850px;
+      margin: 20px auto;
+    }
+    #contents {
+      width: 400px;
+      margin: 10px auto;
+      border: 2px solid #eee;
+    }
+    div {
+      margin: 20px;
+    }
+    .phone {
+      width: 60px;
+    }
+    .input {
+      width: 200px;
+    }
+    .red {
+      color: red;
+    }
+    .bold {
+      font-weight: bold;
+    }
+    .button {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div><h2 style="text-align: center;">지원 양식</h2></div>
+    <div id="contents">
+        <div><span class="red" style="font-size: small;">*빨간색은 필수 입력입니다.</span></div>
+        <div>
+          <label class="red bold">이 름 : <input type="text" class="input" autofocus></label>
+        </div>
+        <div>
+          <label>학 과 : <input type="text" class="input"></label>
+        </div>
+        <div>
+          <label>
+            <span class="red bold">연락처 :</span>
+            <select>
+              <option selected>010</option>
+              <option>011</option>
+              <option>016</option>
+            </select>
+            -
+            <input type="text" class="phone">
+            -
+            <input type="text" class="phone">
+          </label>
+        </div>
+        <div>
+          <span class="red bold">성별 :</span>
+            <label><input type="radio" name="gender">남자</label>
+            <label><input type="radio" name="gender">여자</label>
+        </div>
+        <div>관심언어:
+          <label><input type="checkbox" name="language">자바</label>
+          <label><input type="checkbox" name="language">파이썬</label>
+          <label><input type="checkbox" name="language">C</label>
+          <label><input type="checkbox" name="language">C#</label>
+          <label><input type="checkbox" name="language">기타 언어</label>
+        </div>
+        <div>
+          <textarea rows="10" cols="45" placeholder="자기소개" style="width: 350px;"></textarea>
+        </div>
+        <div class="button">
+          <button>가입하기</button>
+          <button>취소</button>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
