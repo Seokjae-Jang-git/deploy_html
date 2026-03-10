@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>온라인프로필</title>
+  <style>
+   table, tr, th, td {
+      border: 1px solid, #eee; 
+      border-collapse: collapse;
+      padding: 8px 10px;
+      text-align: center;
+      font-size: small;
+    }
+    table{
+      width: 460px;
+      position: relative;
+    }
+    th{
+      background-color: #4b6cf7;
+      color: white;
+    }
+    ul, li{
+      margin: 10px 0px;
+    }
+    p{
+      position: relative;
+      left: 10px;
+    }
+    #container{
+      width: 800px;
+      height: 700px;
+      margin: 10px auto;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.413);
+    }
+    #leftside{
+      background-color: #4b6cf7;
+      color: white;
+      width: 300px;
+      height: 700px;
+      float: left;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    #leftcontents{
+      position: relative;
+      top: 30px;
+    }
+    #rightside{
+      background-color: white;
+      width: 500px;
+      height: 700px;
+      padding: 30px 20px;
+      float: left;
+      box-sizing: border-box;
+    }
+    #rightcontents{
+      position: relative;
+    }
+    .button{
+      width: 80px;
+      height: 40px;
+      background-color: white;
+      color: #4b6cf7;
+      text-align: center;
+      position: relative;
+      left: 100px;
+      margin: 10px;
+      line-height: 40px;
+      border-radius: 20px;
+    }
+    .button:hover{
+      background-color: #eee;
+    }
+    .titletxt{
+      font-size: 30px;
+    }
+    .bold{
+      font-weight: bold;
+    }
+    .profileimg{
+      width: 150px;
+      height: 150px;
+      position: relative;
+      top: 30px;
+      border: 2px solid white;
+      border-radius: 50%;
+      background-color: white;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 80%;
+    }
+    .lefttitle{
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      border-left: 5px solid blue;
+      margin: 15px 0px;
+      padding-left: 10px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="leftside">
+      <div>
+        <img class="profileimg" src="장석재_여권.jpg" alt="">
+      </div>
+      <br>
+      <div id="leftcontents">
+        <div class="titletxt bold">Seokjae Jang</div>
+        <div>IT + 마케팅 + 외국어 멀티플레이어!!</div>
+        <br>
+        <div>🏠 인천시 남동구</div>
+        <div>📧 wo431@naver.com</div>
+        <br>
+        <div class="titletxt bold">SNS</div>
+        <div class="button">클릭!</div>
+      </div>
+    </div>
+    <div id="rightside">
+      <div id="rightcontents">
+        <div>
+          <div class="lefttitle">자기소개</div>
+          <p><mark>프로그래밍</mark>에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
+        </div>
+        <div>
+          <div class="lefttitle">Experience</div>
+          <ul>
+            <li>성공회대학교
+              <ul>
+                <li>일어일본학전공</li>
+              </ul>
+            </li>
+            <li>더조은컴퓨터학원</li>
+              <ul>
+                <li>spring 기반 프로젝트 - 쇼핑몰</li>
+                <li>Cloud 서비스를 이용한 배포</li>
+              </ul>
+          </ul>
+        </div>
+        <div>
+          <div class="lefttitle">보유기술</div>
+          <ul>
+            <li>Java</li>
+            <li>Oracle</li>
+            <li>HTML / CSS</li>
+          </ul>
+        </div>
+        <div>
+          <div class="lefttitle">Education</div>
+          <div style="text-align: center;">학력 사항</div>
+          <table>
+            <tr>
+              <th>출신학교</th>
+              <th>전공</th>
+              <th>기간</th>
+              <th>구분</th>
+            </tr>
+            <tr>
+              <td>성공회대학교</td>
+              <td>일어일본학과</td>
+              <td>2004.03 ~ 2012.03</td>
+              <td>졸업</td>
+            </tr>
+            <tr>
+              <td>더조은컴퓨터학원</td>
+              <td>-</td>
+              <td>2026.01 ~ 08</td>
+              <td>졸업</td>
+            </tr>
+          </table>
+        </div>  
+      </div>
+    </div>
+  </div>
+</body>
+</html>
