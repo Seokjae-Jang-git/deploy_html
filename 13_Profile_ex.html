@@ -41,11 +41,17 @@
             background-position:top;
             background-color: white;
         }
-        .summary{
+        .summarydiv{
             font-size: 20px;
             font-weight: bold;
             font-style: italic;
             line-height: 30px;
+        }
+        .s1{
+            margin: 10px 0px;
+        }
+        .s2{
+            margin: 10px 0px;
         }
                 
         .text1{
@@ -58,9 +64,7 @@
             font-style: italic;
         }
         .contactdiv{
-            position: absolute;
-            top: 480px;
-            left: 70px;
+            margin: 15px auto;
         }
         .contact{
             width: 100px;
@@ -95,11 +99,10 @@
             color: white;
             text-align: center;
         }
-        .resume{
+        .resume, .introduction{
             position: absolute;
-            top: 660px;
-            left: 195px;
-            width: 115px;
+            left: 180px;
+            width: 135px;
             height: 30px;
             color: #008f9d;
             font-size: 15px;
@@ -108,7 +111,13 @@
             background-color: white;
             border-radius: 10px;
         }
-        .resume:hover{
+        .resume{
+            top: 620px;
+        }
+        .introduction{
+            top: 660px;       
+        }
+        .resume:hover, .introduction:hover{
             background-color: rgb(239, 238, 238);
             cursor: pointer;
         }
@@ -286,17 +295,18 @@
             <div class="profileimg"></div>
             <div>
                 <div class="titletxt bold">Seokjae Jang</div>
-                <br>
-                <div class="summary">
-                    <div>다재다능 <span class="text1">멀티플레이어!!</span></div>
-                    <div>IT + 외국어 + 마케팅 + 영업까지!</div>
-                    <br>
-                    <div># 주도적인  # 온화한</div>
-                    <div># 오픈마인드  # 조화로운</div>
-                    <div># 질서의 수호자</div>
-                    <div># 집요한 디테일</div>
+                <div class="summarydiv">
+                    <div class="s1">
+                        <div>다재다능 <span class="text1">멀티플레이어!!</span></div>
+                        <div>IT + 외국어 + 마케팅 + 영업까지!</div>
+                    </div>
+                    <div class="s2">
+                        <div># 주도적인  # 온화한</div>
+                        <div># 오픈마인드  # 조화로운</div>
+                        <div># 질서의 수호자</div>
+                        <div># 집요한 디테일</div>
+                    </div>
                 </div>
-                <br>
                 <div class="contactdiv">
                     <div class="contact">Contact</div>
                     <table>
@@ -321,6 +331,7 @@
             </div>
             <div id="time"></div>
             <a href="이력서 샘플.pdf" download="이력서_장석재.pdf"><div class="resume">이력서 다운로드</div></a>
+            <a href="자기소개서 샘플.pdf" download="자기소개서_장석재.pdf"><div class="introduction">자기소개서 다운로드</div></a>
         </div>
         <div id="rightside">
             <div id="rightcontents">
@@ -356,8 +367,8 @@
                     <div class="rcardcontent">
                         <div class="star">★★★★★</div>
                         <ul>
-                            <li>영어 (어학연수)<br>- 회화 & 비즈니스</li>
-                            <li>일본어 (대학전공)<br>- 회화 & 비즈니스</li>
+                            <li>영어 (어학연수&실무)<br>- 회화 & 비즈니스</li>
+                            <li>일본어 (대학전공&실무)<br>- 회화 & 비즈니스</li>
                         </ul>
                     </div>
                     <a href="D_외국어.html" target="_blank"><div class="cbutton">상세보기</div></a>
