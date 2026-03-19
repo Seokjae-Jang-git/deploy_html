@@ -4,466 +4,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>온라인프로필</title>
-    <style>
-         #container {
-            width: 800px;
-            height: 870px;
-            margin: 10px auto;
-            border-radius: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.413);
-        }
+    <link href="style_profile.css" rel="stylesheet"> 
+    <title>장석재_온라인프로필_업데이트</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-        #leftside {
-            position: relative;
-            float: left;
-            background-color: #008f9d;
-            color: white;
-            width: 322px;
-            height: 700px;
-            padding: 5px;
-            text-align: center;
-            border-top-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            box-sizing: border-box;
-        }
-
-        .profileimg {
-            position: relative;
-            margin: 10px auto;
-            width: 150px;
-            height: 150px;
-            border: 2px solid white;
-            border-radius: 50%;
-            background-size: 103%;
-            background-repeat: no-repeat;
-            background-image: url("Jang01.jpg");
-            background-position:top;
-            background-color: white;
-        }
-        .summarydiv{
-            font-size: 20px;
-            font-weight: bold;
-            font-style: italic;
-            line-height: 30px;
-        }
-        .s1{
-            margin: 10px 0px;
-        }
-        .s2{
-            margin: 10px 0px;
-        }
-                
-        .text1{
-            text-decoration: underline;
-        }
-
-        .text2{
-            font-size: 18px;
-            font-weight: bold;
-            font-style: italic;
-        }
-        .contactdiv{
-            margin: 15px auto;
-        }
-        .contact{
-            width: 100px;
-            margin: 0px auto;
-            border-left: 3px solid white;
-            border-right: 3px solid white;
-            padding-left: 5px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .contactdiv table, tr, td{
-            /* border: 1px solid black; */
-            padding: 2px 5px;
-            text-align: left;
-            border-collapse: collapse;
-            margin: 5px auto;
-        }
-        .contactdiv table img{
-            width: 30px;
-            height: 30px;
-            display: block;
-        }
-
-        #time {
-            /* display: block; */
-            position: absolute;
-            top: 670px;
-            left: 10px;
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            text-align: center;
-        }
-        .resume, .introduction{
-            position: absolute;
-            left: 180px;
-            width: 135px;
-            height: 30px;
-            color: #008f9d;
-            font-size: 15px;
-            font-weight: bold;
-            line-height: 30px;
-            background-color: white;
-            border-radius: 10px;
-        }
-        .resume{
-            top: 620px;
-        }
-        .introduction{
-            top: 660px;       
-        }
-        .resume:hover, .introduction:hover{
-            background-color: rgb(239, 238, 238);
-            cursor: pointer;
-        }
-
-        #rightside {
-            background-color: white;
-            width: 478px;
-            height: 700px;
-            padding: 10px 10px 0px 10px;
-            float: left;
-            border-top-right-radius: 10px;
-            box-sizing: border-box;
-        }
-
-        #rightcontents {
-            width: 430px;
-            display: grid;
-            gap: 10px 10px;
-            grid-template-columns: repeat(2, 210px);
-            grid-template-rows: repeat(3, 222px);
-            margin: 0px auto;
-        }
-
-        .rcard{
-            position: relative;
-            width: 200px;
-            height: 220px;
-            margin: 5px auto;
-            padding: 10px;
-            border: 1px solid #eee;
-            border-radius: 10px;
-            box-sizing: border-box;
-            box-shadow: 2px 2px 2px #eee;
-        }
-
-        .rcardtitle{
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .rcardcontent{
-            text-align: center;
-        }
-        .star{
-            line-height: 25px;
-            color: orange;
-        }
-        .rcardcontent ul{
-            font-size: 14px;
-            text-align: left;
-            line-height:25px;
-            padding-inline-start: 35px;
-            margin-block-start: 2px;
-                       
-        }
-        .cbutton{
-            position: absolute;
-            left: 55px;
-            top: 180px;
-            width: 100px;
-            height: 30px;
-            color: white;
-            text-align: center;
-            line-height: 30px;
-            background-color: #008f9d;
-            border-radius: 12.5px;
-        }
-        .cbutton:hover{
-            background-color: #00909daa;
-            cursor: pointer;
-        }
-        .titletxt {
-            font-size: 30px;
-        }
-
-        .bold {
-            font-weight: bold;
-        }
-        
-        #bottomside{
-            background-color: white;
-            width: 800px;
-            height: 170px;
-            padding: 5px;
-            clear: both;
-            /* border-top: 1px solid black; */
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            box-sizing: border-box;
-        }
-        .btitle{
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .bcontent{
-            margin: 3px 0px;
-            padding: 0px 20px;
-            display: grid;
-            gap: 21px;
-            grid-template-columns: 140px 160px 195px 190px;
-            grid-template-rows: 160px;
-        }
-        .bcard{
-            position: relative;
-            width: 180px;
-            height: 145px;
-            margin: 5px auto;
-            padding: 10px;
-            border: 1px solid #eee;
-            border-radius: 10px;
-            box-sizing: border-box;
-            box-shadow: 2px 2px 2px #eee;
-        }
-        .bcard1{
-            width: 140px;
-        }
-        .bcard2{
-            width: 160px;
-        }
-        .bcard3{
-            width: 195px;
-        }
-        .bcard4{
-            width: 190px;
-        }
-        .bcardtitle{
-            font-weight: bold;
-        }
-        .bcardcontent{
-            text-align: left;
-            font-size: small;
-        }
-        .bcardcontent ul{
-            margin-block-start: 6px;
-            padding-inline-start: 20px;
-        }
-        .bcardcontent li{
-            line-height: 20px;
-        }
-        
-        .bbutton{
-            position: absolute;
-            left: 135px;
-            top: 105px;
-            width: 30px;
-            height: 30px;
-            color: white;
-            text-align: center;
-            line-height: 30px;
-            border: 1px solid #008f9d;
-            border-radius: 50%;
-        }
-        .bbutton:hover{
-            border: 2px solid #008f9d;
-            cursor: pointer;
-        }
-        .bbutton1{
-            left: 93px;
-        }
-        .bbutton2{
-            left: 115px;
-        }
-        .bbutton3{
-            left: 150px;
-        }
-        .bbutton4{
-            left: 145px;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="container">
-        <div id="leftside">
-            <div class="profileimg"></div>
-            <div>
-                <div class="titletxt bold">Seokjae Jang</div>
-                <div class="summarydiv">
-                    <div class="s1">
-                        <div>다재다능 <span class="text1">멀티플레이어!!</span></div>
-                        <div>IT + 외국어 + 마케팅 + 영업까지!</div>
+    <div id="app">
+        <div id="container">
+            <div id="leftside">
+                <div class="profileimg"></div>
+                <div>
+                    <div class="titletxt bold">Seokjae Jang</div>
+                    <div class="summarydiv">
+                        <div class="s1">
+                            <div>다재다능 <span class="text1">멀티플레이어!!</span></div>
+                            <div>IT + 외국어 + 마케팅 + 영업까지!</div>
+                        </div>
+                        <div class="s2">
+                            <div># 주도적인  # 온화한</div>
+                            <div># 오픈마인드  # 조화로운</div>
+                            <div># 질서의 수호자</div>
+                            <div># 집요한 디테일</div>
+                        </div>
                     </div>
-                    <div class="s2">
-                        <div># 주도적인  # 온화한</div>
-                        <div># 오픈마인드  # 조화로운</div>
-                        <div># 질서의 수호자</div>
-                        <div># 집요한 디테일</div>
+                    <div class="contactdiv">
+                        <div class="contact">Contact</div>
+                        <table>
+                            <tr>
+                                <td><img src="Media/phone.png"></td>
+                                <td>010-9**8-*59*</td>
+                            </tr>
+                            <tr>
+                                <td><img src="Media/mail.png"></td>
+                                <td>wo**1@naver.com</td>
+                            </tr>
+                            <tr>
+                                <td><img src="Media/kakao.png"></td>
+                                <td>Au**ie****ard</td>
+                            </tr>
+                            <tr>
+                                <td><img src="Media/linkedin.png"></td>
+                                <td>**ok*ae*an*-*r</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                <div class="contactdiv">
-                    <div class="contact">Contact</div>
-                    <table>
-                        <tr>
-                            <td><img src="phone.png"></td>
-                            <td>010-9**8-*59*</td>
-                        </tr>
-                        <tr>
-                            <td><img src="mail.png"></td>
-                            <td>wo**1@naver.com</td>
-                        </tr>
-                        <tr>
-                            <td><img src="kakao.png"></td>
-                            <td>Au**ie****ard</td>
-                        </tr>
-                        <tr>
-                            <td><img src="linkedin.png"></td>
-                            <td>**ok*ae*an*-*r</td>
-                        </tr>
-                    </table>
-                </div>
+                <div id="time"></div>
+                <div @click="fnDownload_resume" class="resume">이력서 다운로드</div>
+                <div @click="fnDownload_intro" class="introduction">자기소개서 다운로드</div>
             </div>
-            <div id="time"></div>
-            <a href="이력서 샘플.pdf" download="이력서_장석재.pdf"><div class="resume">이력서 다운로드</div></a>
-            <a href="자기소개서 샘플.pdf" download="자기소개서_장석재.pdf"><div class="introduction">자기소개서 다운로드</div></a>
-        </div>
-        <div id="rightside">
-            <div id="rightcontents">
-                <div class="rcard">
-                    <div class="rcardtitle">🖥️ IT관리 🛜</div>
-                    <div class="rcardcontent">
-                        <div class="star">★★★★★</div>
-                        <ul>
-                            <li>자산관리</li>
-                            <li>네트워크관리</li>
-                            <li>시스템 관리</li>
-                            <li>서버관리</li>
-                        </ul>
-                    </div>
-                    <a href="D_IT관리.html" target="_blank"><div class="cbutton">상세보기</div></a>
-                </div>
-                <div class="rcard">
-                    <div class="rcardtitle">⌨️ IT개발🧑🏻‍💻</div>
-                    <div class="rcardcontent">
-                        <div class="star">★★☆☆☆</div>
-                        <ul>
-                            <li>Java & Spring</li>
-                            <li>Oracle & MySQL</li>
-                            <li>HTML/CSS/JavaScript</li>
-                            <li>Flutter</li>
-                        </ul>
-                    </div>
-                    <a href="D_IT개발.html" target="_blank"><div class="cbutton">상세보기</div></a>
-
-                </div>
-                <div class="rcard">
-                    <div class="rcardtitle">🇦🇺 외국어 🇯🇵</div>
-                    <div class="rcardcontent">
-                        <div class="star">★★★★★</div>
-                        <ul>
-                            <li>영어 (어학연수&실무)<br>- 회화 & 비즈니스</li>
-                            <li>일본어 (대학전공&실무)<br>- 회화 & 비즈니스</li>
-                        </ul>
-                    </div>
-                    <a href="D_외국어.html" target="_blank"><div class="cbutton">상세보기</div></a>
-                </div>
-                <div class="rcard">
-                    <div class="rcardtitle">🎨 디자인 🖌️</div>
-                    <div class="rcardcontent">
-                        <div class="star">★★★☆☆</div>
-                        <ul>
-                            <li>Photoshop</li>
-                            <li>Illustrator</li>
-                            <li>Premiere pro</li>
-                            <li>Wix</li>
-                        </ul>
-                    </div>
-                    <a href="D_디자인.html" target="_blank"><div class="cbutton">상세보기</div></a>
-                </div>
-                <div class="rcard">
-                    <div class="rcardtitle">🎥 마케팅 🎬</div>
-                    <div class="rcardcontent">
-                        <div class="star">★★★☆☆</div>
-                        <ul>
-                            <li>Youtube 채널</li>
-                            <li>회사 소개 영상</li>
-                            <li>회사 홈페이지</li>
-                            <li>사진/영상 촬영 & 편집</li>
-                        </ul>
-                    </div>
-                    <a href="D_마케팅.html" target="_blank"><div class="cbutton">상세보기</div></a>
-                </div>
-                <div class="rcard">
-                    <div class="rcardtitle">💲기술영업 💵</div>
-                    <div class="rcardcontent">
-                        <div class="star">★★★☆☆</div>
-                        <ul>
-                            <li>태양광 장비</li>
-                            <li>PCB 장비</li>
-                            <li>기술 미팅 및 사양협의</li>
-                            <li>영업 지원 (수주관리)</li>
-                        </ul>
-                    </div>
-                    <a href="D_기술영업.html" target="_blank"><div class="cbutton">상세보기</div></a>
-                </div>
-            </div>
-        </div>
-        <div id="bottomside">
-                <div class="bcontent"> 
-                    <div class="bcard bcard1">
-                        <div class="bcardtitle">기본 인적 사항</div>
-                        <div class="bcardcontent">
+            <div id="rightside">
+                <div id="rightcontents">
+                    <div class="rcard">
+                        <div class="rcardtitle">🖥️ IT관리 🛜</div>
+                        <div class="rcardcontent">
+                            <div class="star">★★★★★</div>
                             <ul>
-                                <li>생년월일</li>
-                                <li>MBTI</li>
-                                <li>병역사항</li>
-                                <li>가족사항</li>
+                                <li>자산관리</li>
+                                <li>네트워크관리</li>
+                                <li>시스템 관리</li>
+                                <li>서버관리</li>
                             </ul>
                         </div>
-                        <a href="D_기본인적.html" target="_blank"><div class="bbutton bbutton1">🔍</div></a>
+                        <a href="Page/D_IT관리.html" target="_blank"><div class="cbutton">상세보기</div></a>
                     </div>
-                    <div class="bcard bcard2">
-                        <div class="bcardtitle">학력 사항</div>
-                            <div class="bcardcontent">
-                                <ul>
-                                    <li>초/중/고등학교</li>
-                                    <li>성공회대학교<br>일어일본학과</li>
-                                    <li>영어 어학연수</li>
-                                </ul>
-                            </div>
-                        <a href="D_학력.html" target="_blank"><div class="bbutton bbutton2">🔍</div></a>
+                    <div class="rcard">
+                        <div class="rcardtitle">⌨️ IT개발🧑🏻‍💻</div>
+                        <div class="rcardcontent">
+                            <div class="star">★★☆☆☆</div>
+                            <ul>
+                                <li>Java & Spring</li>
+                                <li>Oracle & MySQL</li>
+                                <li>HTML/CSS/JavaScript</li>
+                                <li>Flutter</li>
+                            </ul>
+                        </div>
+                        <a href="Page/D_IT개발.html" target="_blank"><div class="cbutton">상세보기</div></a>
+
                     </div>
-                    <div class="bcard bcard3">
-                        <div class="bcardtitle">자격증 및 수상내역</div>
-                            <div class="bcardcontent">
-                                <ul>
-                                    <li>영어: TESOL & TOEIC</li>
-                                    <li>일본어: JLPT</li>
-                                    <li>컴퓨터: 워드 & 컴퓨터활용</li>
-                                    <li>학과수석 장학금</li>
-                                </ul>
-                            </div>
-                        <a href="D_자격증.html" target="_blank"><div class="bbutton bbutton3">🔍</div></a>
+                    <div class="rcard">
+                        <div class="rcardtitle">🇦🇺 외국어 🇯🇵</div>
+                        <div class="rcardcontent">
+                            <div class="star">★★★★★</div>
+                            <ul>
+                                <li>영어 (어학연수&실무)<br>- 회화 & 비즈니스</li>
+                                <li>일본어 (대학전공&실무)<br>- 회화 & 비즈니스</li>
+                            </ul>
+                        </div>
+                        <a href="Page/D_외국어.html" target="_blank"><div class="cbutton">상세보기</div></a>
                     </div>
-                    <div class="bcard bcard4">
-                        <div class="bcardtitle">대외 활동</div>
-                            <div class="bcardcontent">
-                                <ul>
-                                    <li>일어연극부 주연/연출</li>
-                                    <li>부천 YMCA 아버지교실<br>청년부장</li>
-                                    <li>대학 과학생회</li>
-                                    <li>고교 동아리 회장</li>
-                                </ul>
-                            </div>
-                        <a href="D_대외활동.html" target="_blank"><div class="bbutton bbutton4">🔍</div></a>
+                    <div class="rcard">
+                        <div class="rcardtitle">🎨 디자인 🖌️</div>
+                        <div class="rcardcontent">
+                            <div class="star">★★★☆☆</div>
+                            <ul>
+                                <li>Photoshop</li>
+                                <li>Illustrator</li>
+                                <li>Premiere pro</li>
+                                <li>Wix</li>
+                            </ul>
+                        </div>
+                        <a href="Page/D_디자인.html" target="_blank"><div class="cbutton">상세보기</div></a>
+                    </div>
+                    <div class="rcard">
+                        <div class="rcardtitle">🎥 마케팅 🎬</div>
+                        <div class="rcardcontent">
+                            <div class="star">★★★☆☆</div>
+                            <ul>
+                                <li>Youtube 채널</li>
+                                <li>회사 소개 영상</li>
+                                <li>회사 홈페이지</li>
+                                <li>사진/영상 촬영 & 편집</li>
+                            </ul>
+                        </div>
+                        <a href="Page/D_마케팅.html" target="_blank"><div class="cbutton">상세보기</div></a>
+                    </div>
+                    <div class="rcard">
+                        <div class="rcardtitle">💲기술영업 💵</div>
+                        <div class="rcardcontent">
+                            <div class="star">★★★☆☆</div>
+                            <ul>
+                                <li>태양광 장비</li>
+                                <li>PCB 장비</li>
+                                <li>기술 미팅 및 사양협의</li>
+                                <li>영업 지원 (수주관리)</li>
+                            </ul>
+                        </div>
+                        <a href="Page/D_기술영업.html" target="_blank"><div class="cbutton">상세보기</div></a>
                     </div>
                 </div>
+            </div>
+            <div id="bottomside">
+                    <div class="bcontent"> 
+                        <div class="bcard bcard1">
+                            <div class="bcardtitle">기본 인적 사항</div>
+                            <div class="bcardcontent">
+                                <ul>
+                                    <li>생년월일</li>
+                                    <li>MBTI</li>
+                                    <li>병역사항</li>
+                                    <li>가족사항</li>
+                                </ul>
+                            </div>
+                            <a href="Page/D_기본인적.html" target="_blank"><div class="bbutton bbutton1">🔍</div></a>
+                        </div>
+                        <div class="bcard bcard2">
+                            <div class="bcardtitle">학력 사항</div>
+                                <div class="bcardcontent">
+                                    <ul>
+                                        <li>초/중/고등학교</li>
+                                        <li>성공회대학교<br>일어일본학과</li>
+                                        <li>영어 어학연수</li>
+                                    </ul>
+                                </div>
+                            <a href="Page/D_학력.html" target="_blank"><div class="bbutton bbutton2">🔍</div></a>
+                        </div>
+                        <div class="bcard bcard3">
+                            <div class="bcardtitle">자격증 및 수상내역</div>
+                                <div class="bcardcontent">
+                                    <ul>
+                                        <li>영어: TESOL & TOEIC</li>
+                                        <li>일본어: JLPT</li>
+                                        <li>컴퓨터: 워드 & 컴퓨터활용</li>
+                                        <li>학과수석 장학금</li>
+                                    </ul>
+                                </div>
+                            <a href="Page/D_자격증.html" target="_blank"><div class="bbutton bbutton3">🔍</div></a>
+                        </div>
+                        <div class="bcard bcard4">
+                            <div class="bcardtitle">대외 활동</div>
+                                <div class="bcardcontent">
+                                    <ul>
+                                        <li>일어연극부 주연/연출</li>
+                                        <li>부천 YMCA 아버지교실<br>청년부장</li>
+                                        <li>대학 과학생회</li>
+                                        <li>고교 동아리 회장</li>
+                                    </ul>
+                                </div>
+                            <a href="Page/D_대외활동.html" target="_blank"><div class="bbutton bbutton4">🔍</div></a>
+                        </div>
+                    </div>
+            </div>
         </div>
     </div>
 </body>
@@ -477,6 +201,62 @@
                 + minutes + " : "
                 + second;
         obj.innerHTML = time;
-    }, 1000)
+    }, 1000);
+
+    const app = Vue.createApp({
+        data() {
+            return {
+                // 변수 - (key : value)
+                
+            };
+        },
+        methods: {
+            // 함수(메소드) - (key : function())
+            fnDownload_resume : function(){
+                if (confirm("이력서를 다운로드하시겠습니까?")){
+                    this.fnPopup_resume();
+                }
+            },
+            fnPopup_resume : function() {
+                // window.open(인자1, 인자2, 인자3)
+                // 인자1: 팝업을 띄울 주소
+                // 인자2: 팝업의 이름
+                // 인자3: 크기(width, heigh) 및 위치(left, top...)
+                let top = (screen.availHeight-220) / 2;
+                let left = (screen.availWidth-420) / 2;
+
+                window.open(
+                    "Page/Download_resume.html",
+                    "Download_resume",
+                    `width = 420, height = 220, left=${left}, top=${top}`);
+            },
+            fnDownload_intro : function(){
+                if (confirm("자기소개서를 다운로드하시겠습니까?")){
+                    this.fnPopup_intro();
+                }
+            },
+            fnPopup_intro : function() {
+                // window.open(인자1, 인자2, 인자3)
+                // 인자1: 팝업을 띄울 주소
+                // 인자2: 팝업의 이름
+                // 인자3: 크기(width, heigh) 및 위치(left, top...)
+                let top = (screen.availHeight-220) / 2;
+                let left = (screen.availWidth-420) / 2;
+
+                window.open(
+                    "Page/Download_intro.html",
+                    "Download_intro",
+                    `width = 420, height = 220, left=${left}, top=${top}`);
+            },
+            
+            
+            
+        }, // methods
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+        }
+    });
+
+    app.mount('#app');
 </script>
 </html>
